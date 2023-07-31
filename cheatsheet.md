@@ -56,7 +56,18 @@ Step 2: Merge local branch <loc_fea_bra> into master without commit (make sure y
 
 
 ## Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
-Step 1:
+Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
+
+        # git switch <loc_fea_bra>
+        # git merge --no-commit <remote_bra_of_loc_fea_bra>
+        # git mergetool (optional for solving conflicts)
+
+## Fast foreward a branch to another
+Switch to the branch you want to fast-foreward and then do a fast foreward merge (merge -ff) by specyfing the <destiny_bra> name to which you want to fast forward your <loc_fea_bra_to_ff>:
+
+        # git switch <loc_fea_bra_to_ff>
+        # git merge --ff --no-commit <destiny_bra>
+
 
 ## VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your git config file afterwards.
