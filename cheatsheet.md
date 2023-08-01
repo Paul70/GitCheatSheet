@@ -68,6 +68,16 @@ Switch to the branch you want to fast-foreward and then do a fast foreward merge
         # git switch <loc_fea_bra_to_ff>
         # git merge --ff --no-commit <destiny_bra>
 
+## Create a local branch tracking an already existing remote branch (which is not trunk!)
+Steps to reach the goal:
+  1. Fetch all remote branch information
+  2. List all remote and trackable branches and check if your desired branch is among them 
+  3. Create a local branch which tracks the desired remote one (e.g. remote branch is called "remotes/origin/remote/feature/branch") by giving the local branch the same name without "remotes/origin/".
+
+  $ git fetch --all
+  $ git branch -v -a 
+  $ git switch <remote/feature/branch>
+
 
 ## VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
