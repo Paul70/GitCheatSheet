@@ -70,7 +70,7 @@ Switch to the branch you want to fast-foreward and then do a fast foreward merge
 
 
 ## VS Code as Git merge tool
-To set VS Code as your default git mergetool execute the following commands and you may have a look in your git config file afterwards.
+To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
