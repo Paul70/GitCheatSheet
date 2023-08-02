@@ -1,6 +1,8 @@
 # Git Cheat Sheet
 
-## Create a local branch and push that branch to the remote repository
+## 1. Git Workflows
+
+### Create a local branch and push that branch to the remote repository
 Step 1: local branch:   
 - using git checkout command:
   
@@ -16,7 +18,7 @@ Step 2: push branch to remote repo (in most cases the remote repo name is "origi
         # git push -u <name_of_remote_repo> <my_new_local_fancy_branch_name>
         (# git push -u origin <my_new_local_fancy_branch_name>)
 
-## Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local feature branch <loc_fea_bra>
+### Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local feature branch <loc_fea_bra>
 Step 1: Switch to your <loc_fea_bra> with
 
         # git switch <loc_fea_bra> 
@@ -43,7 +45,7 @@ Just close the editor in case you do not want to write a commit. Afterwards, eve
         # git mergetool (optional command, may go directly in the IDE)
         # git rebase --continue
 
-## Merge a local branch <lob_fea_bra> into master without a commit
+### Merge a local branch <lob_fea_bra> into master without a commit
 Step 1: Switch to master and make everything clean, also update from origin:
 
         # git switch master
@@ -55,20 +57,20 @@ Step 2: Merge local branch <loc_fea_bra> into master without commit (make sure y
         # git merge --no-commit <loc_fea_bra>
 
 
-## Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
+### Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
 Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
 
         # git switch <loc_fea_bra>
         # git merge --no-commit <remote_bra_of_loc_fea_bra>
         # git mergetool (optional for solving conflicts)
 
-## Fast foreward a branch to another
+### Fast foreward a branch to another
 Switch to the branch you want to fast-foreward and then do a fast foreward merge (merge -ff) by specyfing the <destiny_bra> name to which you want to fast forward your <loc_fea_bra_to_ff>:
 
         # git switch <loc_fea_bra_to_ff>
         # git merge --ff --no-commit <destiny_bra>
 
-## Create a local branch tracking an already existing remote branch (which is not trunk!)
+### Create a local branch tracking an already existing remote branch (which is not trunk!)
 Steps to reach the goal:
   1. Fetch all remote branch information
   2. List all remote and trackable branches and check if your desired branch is among them 
@@ -78,9 +80,21 @@ Steps to reach the goal:
   $ git branch -v -a 
   $ git switch <remote/feature/branch>
 
+## Git Configuration 
 
-## VS Code as Git merge tool
+### VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+
+### Configure Git for Windows and Unix line endings
+
+      # git config --global core.autocrlf true
+      # Configure Git to ensure line endings in files you checkout are correct for Windows.
+      # For compatibility, line endings are converted to Unix style when you commit files.
+      # https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+
+      #git rm --cached -r .
+      # git reset --hard
+        
