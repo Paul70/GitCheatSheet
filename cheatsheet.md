@@ -88,12 +88,16 @@ To set VS Code as your default git mergetool execute the following commands and 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
-### Configure Git for Windows and Unix line endings
+### Configure Git for Windows (CR LF) and Unix (LF) line endings
+Windows uses two chracters to indicate line endings, CR -Carriage Return - (0x0D (hex), 13 (decimal)) and LF -Line Feed- (0x0A (hex), 10 (decimal)).
+Unix based systems only insert a single LF to mark line endings. Read https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+for more information about this topic and why the world is at it is.
+However, you need to configure git to adapt the line ending markers if both systems (Windows and Unix) work together on one Git project. This is often the case since build
+servers mostly are Unix systems. Thow following command ensures line endings in files you checkout are correct for Windows. For compatibility, line endings are converted to Unix style when you commit files. 
 
       # git config --global core.autocrlf true
-      # Configure Git to ensure line endings in files you checkout are correct for Windows.
-      # For compatibility, line endings are converted to Unix style when you commit files.
-      # https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+      
+### Cached
 
       #git rm --cached -r .
       # git reset --hard
