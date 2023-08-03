@@ -90,12 +90,18 @@ To set VS Code as your default git mergetool execute the following commands and 
 
 ### Configure Git for Windows (CR LF) and Unix (LF) line endings
 Windows uses two chracters to indicate line endings, CR -Carriage Return - (0x0D (hex), 13 (decimal)) and LF -Line Feed- (0x0A (hex), 10 (decimal)).
-Unix based systems only insert a single LF to mark line endings. Read https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
-for more information about this topic and why the world is at it is.
+Unix based systems only insert a single LF to mark line endings.
 However, you need to configure git to adapt the line ending markers if both systems (Windows and Unix) work together on one Git project. This is often the case since build
 servers mostly are Unix systems. Thow following command ensures line endings in files you checkout are correct for Windows. For compatibility, line endings are converted to Unix style when you commit files. 
 
       # git config --global core.autocrlf true
+
+More information about this topic and why the world is as it is can be found under 
+  https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
+
+  https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+
+  
       
 ### Cached
 
