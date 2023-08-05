@@ -2,7 +2,7 @@
 
 ## 1. Git Workflows
 
-### Create a local branch and push that branch to the remote repository
+#### Create a local branch and push that branch to the remote repository
 Step 1: local branch:   
 - using git checkout command:
   
