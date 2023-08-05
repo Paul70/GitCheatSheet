@@ -1,10 +1,36 @@
-<H1>Git Cheat Sheet
+<style>
+   body{counter-reset: section}
+   h2{counter-reset: sub-section}
+   h3{counter-reset: composite}
+   h4{counter-reset: detail}
 
-#<H2>1. Git Workflows
+   h2:before{
+     counter-increment: section;
+     content: counter(section) " ";
+   }
+   h3:before{
+     counter-increment: sub-section;
+     content: counter(section) "." counter(sub-section) " ";
+   }
+   h4:before{
+     counter-increment: composite;
+     content: counter(section) "." counter(sub-section) "." counter(composite) " ";
+   }
+   h5:before{
+     counter-increment: detail;
+     content: counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";
+   }
+</style>
 
-##<H3>1.1 Create a local branch and push that branch to the remote repository
+<body>
+<H1>Git Cheat Sheet</H1>
+
+<H2>Git Workflows</H2>
+
+<H3>Create a local branch and push that branch to the remote repository</H3>
+
 - Step 1: Create a local branch (via git checkout or git branch/switch)
-- Step 2: Eventually do already some commits and push the new commits and branch to the remote repository with set-upstream option
+- Step 2: Eventually do already some commits and push the new commits and branch to the remote repository   with set-upstream option
   
         # step 1:
         # git checkout -b <local_feature_branch> 
@@ -16,7 +42,8 @@
         # git push -u origin <local_feature_branch>
 <hr>
 
-## <H3>1.2 Rebase a local branch onto origin/main and push origin/main to that new, rebased history
+<H3>Rebase a local branch onto origin/main and push origin/main to that new, rebased history</H3>
+
 - Step 1: Checkout your local branch you want to rebase and get updates, especially for remote origin/main by doing a fetch all. Eventually have a look on the commit graph (e.g. with gitk).
 - Step 2: Do a interactive rebase onto origin/master. In case of squashing commits, remember that you must pick the first commit. Also give a meaningful squash commit description. If conflicts occur, resolve them.
 - Step 3: Switch to your local main and simply fast-forward it to origin/main. That should be possible since you do not work directly on your local master branch.
@@ -47,7 +74,9 @@
         # git switch <local_feature_branch>
         # git push -f 
 
-## <H3>1.3 Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local feature branch <loc_fea_bra>
+<H3>Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local</H3>
+
+feature branch <loc_fea_bra>
 Step 1: Switch to your <loc_fea_bra> with
 
         # git switch <loc_fea_bra> 
@@ -109,17 +138,19 @@ Steps to reach the goal:
   $ git fetch --all
   $ git branch -v -a 
   $ git switch <remote/feature/branch>
+<hr>
 
+# <H2>2. Git Configuration 
 
-## 2. Git Configuration 
-
-### VS Code as Git merge tool
+## <H3> 2.1 VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
-### Configure Git for Windows (CR LF) and Unix (LF) line endings
+<hr>
+
+# <H3> 2.2 Configure Git for Windows (CR LF) and Unix (LF) line endings
 Windows uses two chracters to indicate line endings, CR -Carriage Return - (0x0D (hex), 13 (decimal)) and LF -Line Feed- (0x0A (hex), 10 (decimal)).
 Unix based systems only insert a single LF to mark line endings.
 However, you need to configure git to adapt the line ending markers if both systems (Windows and Unix) work together on one Git project. This is often the case since build
@@ -138,4 +169,6 @@ More information about this topic and why the world is as it is can be found und
 
       #git rm --cached -r .
       # git reset --hard
+
+</body>
         
