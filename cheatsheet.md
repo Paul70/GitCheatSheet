@@ -73,6 +73,18 @@
         # step 6:
         # git switch <local_feature_branch>
         # git push -f 
+<hr>
+
+<H3>Deleting a remote feature tracking branch</H3>
+
+- Step 1: "Push" delete command to remote and say which remote branch to delete.
+- Step 2: In case, a local feature branch is connected with this deleted remote branch, decouple that branch from the now non existing remote branch.
+  
+        # git push origin --delete <remote_feature_branch>
+        # git switch <local_feature_branch>
+        # git branch --unset-upstream
+
+<hr>
 
 <H3>Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local</H3>
 
