@@ -175,6 +175,12 @@ More information about this topic and why the world is as it is can be found und
 
   https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
 
+  <hr>
+
+  <H3> Git Command Completion for Windows PowerShell</H3>
+  There is a tool called Git polish or so. to enable it follow instructions given under the following link:
+
+     https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell
   
       
 ### Cached
