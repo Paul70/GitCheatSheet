@@ -178,9 +178,10 @@ More information about this topic and why the world is as it is can be found und
   <hr>
 
   <H3> Git Command Completion for Windows PowerShell</H3>
-  There is a tool called Git polish or so. to enable it follow instructions given under the following link:
+  There is a tool/plugin called Git polish or something simialr. How to install and make use of it is depicted here:
+   <br>
 
-     https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell
+  https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell
   
       
 ### Cached
