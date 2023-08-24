@@ -86,31 +86,31 @@
 
 <hr>
 
-<H3>Fetch the most recent commits from master (or main or trunk) and and do a rebase on your local</H3>
+<H3>Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main.</H3>
 
-feature branch <loc_fea_bra>
-Step 1: Switch to your <loc_fea_bra> with
+- Step 1: Switch to your local feature branch.
+- Step 2: If your local feature branch has a remote tracking branch, update both of them so that they point to the same commit.
+- Step 3: Fetch all new commits from the remote repository.
+- Step 4: Do an interactive rebase of your local feature branch, i.e. put/squash all your local feature branch commits on top of origin/main.
+- Step 5: Now the remote tracking branch and your local feature branch have diverged. Therefore, to bring them together do a push --force (or push --force-with-lease if ohter persons also refer to this remote tracking branch of your local feature branch).
+          Optionally, you can do a try run, before pushing for real.
 
-        # git switch <loc_fea_bra> 
-
-Step 2: If there is a remote branch of your <loc_fea_bra>, update both branches (git push and pull) so that <loc_fea_bra> and <remotes/origin/loc_fea_bra> point to the same commit.
-
-        # git push or pull or both
-
-Step 3: Fetch all recently added commits from origin:
-
+        # step 1 -3:
+        # git switch <local_feature_branch>
+        # git git push or pull
+        [# gitk to verify your git graph]
         # git fetch --all
 
-Step 4: For the sake of couriosity, see what commits have been fetched from remotes/origin/master via
+        # step 4:
+        # git rebase --interactive origin/main [to be able to squash commits]
 
-        # git log origin/master ^<loc_fea_bra>
+        # step 5;
+        [# git push -f --try-run OR git push --force-with-lease --try-run]
+        # git push -f OR push --force-with-lease
 
-Step 5: Rebase all commits from origin/master into your local branch  <loc_fea_bra>:
+<hr>
 
-        # git rebase origin/master
-
-Step 6: In case of conflicts, resolve them using the git mergetool and commit them on your local branch     
-Just close the editor in case you do not want to write a commit. Afterwards, eventually remove generated .orig files which are no longer used.
+<H3>How to solve merge conflicts happening during a rebase or merge</H3>
 
         # git mergetool (optional command, may go directly in the IDE)
         # git rebase --continue
