@@ -133,12 +133,12 @@ Under section Configuration, there are there is an instruction how to configure 
 - Step 2: List all remote and trackable branches and check if your desired branch is among them 
 - Step 3: Create a local feature branch which tracks the desired remote one by giving the local branch the same name without "remotes/origin/".
 
-     # step 1:
-     # git fetch --all
-     # step 2:
-     # git branch -v -a
-     # step 3:  
-     # git switch
+        # step 1:
+        # git fetch --all
+        # step 2:
+        # git branch -v -a
+        # step 3:  
+        # git switch
 <hr>
 
 ## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
