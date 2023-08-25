@@ -112,20 +112,19 @@
 
 <H3>How to solve merge conflicts happening during a rebase or merge</H3>
 
-        # git mergetool (optional command, may go directly in the IDE)
+It is often a good choice to do a rebase interactively (option --interactive) since you get automatically guided through your rebase process.
+In case one just gets command line information to solve conflicts, proceed by 
+
+- Step 1: call your Git mergetool
+- Step 2: Solve your conflicts and save everything, when your mergetool editor closes and you return to command line, continue with rebase process
+
+        # step 1:
+        # git mergetool [solve your conflicts and whatever has to be done inside your mergetool, save all (CTRL+S) and close mergetool)
+        # step 2:
         # git rebase --continue
-<hr>
+  
+Under section Configuration, there are there is an instruction how to configure VS Code to use it as mergetool and your default Git editor to write commits etc.
 
-## <H3>Merge a local branch <lob_fea_bra> into master without a commit
-Step 1: Switch to master and make everything clean, also update from origin:
-
-        # git switch master
-        # git fetch origin
-        # git merge --no-commit origin/master
-
-Step 2: Merge local branch <loc_fea_bra> into master without commit (make sure you are on master!):
-
-        # git merge --no-commit <loc_fea_bra>
 <hr>
 
 ## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
