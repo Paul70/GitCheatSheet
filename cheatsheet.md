@@ -127,6 +127,20 @@ Under section Configuration, there are there is an instruction how to configure 
 
 <hr>
 
+<H3>Create a local branch tracking an already existing remote branch</H3>
+
+- Step 1: Fetch all remote branch information
+- Step 2: List all remote and trackable branches and check if your desired branch is among them 
+- Step 3: Create a local feature branch which tracks the desired remote one by giving the local branch the same name without "remotes/origin/".
+
+     # step 1:
+     # git fetch --all
+     # step 2:
+     # git branch -v -a
+     # step 3:  
+     # git switch
+<hr>
+
 ## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
 Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
 
@@ -134,22 +148,7 @@ Switch to your local branch and do a merge with no commit. Eventually, solve con
         # git merge --no-commit <remote_bra_of_loc_fea_bra>
         # git mergetool (optional for solving conflicts)
 
-### Fast foreward a branch to another
-Switch to the branch you want to fast-foreward and then do a fast foreward merge (merge -ff) by specyfing the <destiny_bra> name to which you want to fast forward your <loc_fea_bra_to_ff>:
 
-        # git switch <loc_fea_bra_to_ff>
-        # git merge --ff --no-commit <destiny_bra>
-
-### Create a local branch tracking an already existing remote branch (which is not trunk!)
-Steps to reach the goal:
-  1. Fetch all remote branch information
-  2. List all remote and trackable branches and check if your desired branch is among them 
-  3. Create a local branch which tracks the desired remote one (e.g. remote branch is called "remotes/origin/remote/feature/branch") by giving the local branch the same name without "remotes/origin/".
-
-  $ git fetch --all
-  $ git branch -v -a 
-  $ git switch <remote/feature/branch>
-<hr>
 
 # <H2>2. Git Configuration 
 
@@ -158,6 +157,8 @@ To set VS Code as your default git mergetool execute the following commands and 
 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+
+Hier muss ich noch festhalten wie ich das mit den drei Spalten bei vs code einstelle, wenn ich conflicts hab
 
 <hr>
 
