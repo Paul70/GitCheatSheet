@@ -1,8 +1,8 @@
-#Git Cheat Sheet
+# Git Cheat Sheet
 
-##Git Workflows
+## Git Workflows
 
-###Create a local branch and push that branch to the remote repository
+### Create a local branch and push that branch to the remote repository
 
 - Step 1: Create a local branch (via git checkout or git branch/switch)
 - Step 2: Eventually do already some commits and push the new commits and branch to the remote repository   with set-upstream option
