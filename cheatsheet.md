@@ -23,11 +23,11 @@
 </style>
 
 <body>
-<H1>Git Cheat Sheet</H1>
+#Git Cheat Sheet
 
-<H2>Git Workflows</H2>
+##Git Workflows
 
-<H3>Create a local branch and push that branch to the remote repository</H3>
+###Create a local branch and push that branch to the remote repository
 
 - Step 1: Create a local branch (via git checkout or git branch/switch)
 - Step 2: Eventually do already some commits and push the new commits and branch to the remote repository   with set-upstream option
@@ -42,7 +42,7 @@
         # git push -u origin <local_feature_branch>
 <hr>
 
-<H3>Rebase a local branch onto origin/main and push origin/main to that new, rebased history</H3>
+###Rebase a local branch onto origin/main and push origin/main to that new, rebased history
 
 - Step 1: Checkout your local branch you want to rebase and get updates, especially for remote origin/main by doing a fetch all. Eventually have a look on the commit graph (e.g. with gitk).
 - Step 2: Do a interactive rebase onto origin/master. In case of squashing commits, remember that you must pick the first commit. Also give a meaningful squash commit description. If conflicts occur, resolve them.
