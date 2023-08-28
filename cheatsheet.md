@@ -22,7 +22,7 @@
    }
 </style>
 
-<body>
+
 #Git Cheat Sheet
 
 ##Git Workflows
@@ -189,5 +189,5 @@ More information about this topic and why the world is as it is can be found und
       #git rm --cached -r .
       # git reset --hard
 
-</body>
+
         
