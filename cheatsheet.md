@@ -1,5 +1,7 @@
 # Git Cheat Sheet
 
+[toc]
+
 ## Git Workflows
 
 ### Create a local branch and push that branch to the remote repository
@@ -17,7 +19,7 @@
         # git push -u origin <local_feature_branch>
 <hr>
 
-###Rebase a local branch onto origin/main and push origin/main to that new, rebased history
+### Rebase a local branch onto origin/main and push origin/main to that new, rebased history
 
 - Step 1: Checkout your local branch you want to rebase and get updates, especially for remote origin/main by doing a fetch all. Eventually have a look on the commit graph (e.g. with gitk).
 - Step 2: Do a interactive rebase onto origin/master. In case of squashing commits, remember that you must pick the first commit. Also give a meaningful squash commit description. If conflicts occur, resolve them.
