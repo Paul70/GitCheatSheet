@@ -31,7 +31,7 @@ Table of contents
 =================
 
 <!--ts-->
-   * [Git Workflows](##Git Workflows)
+   * [Git Workflows](#Git Workflows)
    * [Usage](#usage)
       * [STDIN](#stdin)
       * [Local files](#local-files)
