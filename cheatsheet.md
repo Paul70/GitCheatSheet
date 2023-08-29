@@ -52,7 +52,8 @@ Table of contents
 Installation
 ============
 
-## Git Workflows
+Git Workflows
+============
 
 ### Create a local branch and push that branch to the remote repository
 
