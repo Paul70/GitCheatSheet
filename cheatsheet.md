@@ -31,7 +31,7 @@ Table of contents
 =================
 
 <!--ts-->
-   * [Installation](#installation)
+   * [Git Workflows](## Git Workflows)
    * [Usage](#usage)
       * [STDIN](#stdin)
       * [Local files](#local-files)
