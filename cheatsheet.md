@@ -48,10 +48,6 @@ Table of contents
      * [Public](#public)
 <!--te-->
 
-
-Installation
-============
-
 Git Workflows
 ============
 
