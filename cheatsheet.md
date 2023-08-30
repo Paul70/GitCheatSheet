@@ -8,6 +8,7 @@
     + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
     + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
     + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
+  * [Git Configuration](#git-configuration)
 
 <!-- TOC end -->
 
@@ -146,8 +147,8 @@ Switch to your local branch and do a merge with no commit. Eventually, solve con
         # git mergetool (optional for solving conflicts)
 
 
-
-# <H2>2. Git Configuration 
+<!-- TOC --><a name="git-configuration"></a>
+## Git Configuration 
 
 ## <H3> 2.1 VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
