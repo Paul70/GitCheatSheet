@@ -1,7 +1,23 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Git Cheat Sheet](#git-cheat-sheet)
+  * [Git Workflows](#git-workflows)
+    + [Create a local branch and push that branch to the remote repository](#create-a-local-branch-and-push-that-branch-to-the-remote-repository)
+    + [Rebase a local branch onto origin/main and push origin/main to that new, rebased history](#rebase-a-local-branch-onto-originmain-and-push-originmain-to-that-new-rebased-history)
+    + [Deleting a remote feature tracking branch](#deleting-a-remote-feature-tracking-branch)
+    + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
+    + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
+    + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="git-cheat-sheet"></a>
 # Git Cheat Sheet
 
+<!-- TOC --><a name="git-workflows"></a>
 ## Git Workflows
 
+<!-- TOC --><a name="create-a-local-branch-and-push-that-branch-to-the-remote-repository"></a>
 ### Create a local branch and push that branch to the remote repository
 
 - Step 1: Create a local branch (via git checkout or git branch/switch)
@@ -17,6 +33,7 @@
         # git push -u origin <local_feature_branch>
 <hr>
 
+<!-- TOC --><a name="rebase-a-local-branch-onto-originmain-and-push-originmain-to-that-new-rebased-history"></a>
 ### Rebase a local branch onto origin/main and push origin/main to that new, rebased history
 
 - Step 1: Checkout your local branch you want to rebase and get updates, especially for remote origin/main by doing a fetch all. Eventually have a look on the commit graph (e.g. with gitk).
@@ -50,7 +67,8 @@
         # git push -f 
 <hr>
 
-<H3>Deleting a remote feature tracking branch</H3>
+<!-- TOC --><a name="deleting-a-remote-feature-tracking-branch"></a>
+### Deleting a remote feature tracking branch
 
 - Step 1: "Push" delete command to remote and say which remote branch to delete.
 - Step 2: In case, a local feature branch is connected with this deleted remote branch, decouple that branch from the now non existing remote branch.
@@ -61,7 +79,8 @@
 
 <hr>
 
-<H3>Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main.</H3>
+<!-- TOC --><a name="get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain"></a>
+### Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main
 
 - Step 1: Switch to your local feature branch.
 - Step 2: If your local feature branch has a remote tracking branch, update both of them so that they point to the same commit.
@@ -85,7 +104,8 @@
 
 <hr>
 
-<H3>How to solve merge conflicts happening during a rebase or merge</H3>
+<!-- TOC --><a name="how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge"></a>
+### How to solve merge conflicts happening during a rebase or merge
 
 It is often a good choice to do a rebase interactively (option --interactive) since you get automatically guided through your rebase process.
 In case one just gets command line information to solve conflicts, proceed by 
@@ -102,7 +122,8 @@ Under section Configuration, there are there is an instruction how to configure 
 
 <hr>
 
-<H3>Create a local branch tracking an already existing remote branch</H3>
+<!-- TOC --><a name="create-a-local-branch-tracking-an-already-existing-remote-branch"></a>
+### Create a local branch tracking an already existing remote branch
 
 - Step 1: Fetch all remote branch information
 - Step 2: List all remote and trackable branches and check if your desired branch is among them 
@@ -115,6 +136,7 @@ Under section Configuration, there are there is an instruction how to configure 
         # step 3:  
         # git switch
 <hr>
+        
 
 ## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
 Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
