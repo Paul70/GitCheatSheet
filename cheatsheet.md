@@ -1,55 +1,6 @@
 # Git Cheat Sheet
 
-gh-md-toc
-=========
-
-[![CI](https://github.com/ekalinin/github-markdown-toc/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ekalinin/github-markdown-toc/actions/workflows/ci.yml)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ekalinin/github-markdown-toc)
-
-gh-md-toc — is for you if you **want to generate TOC** (Table Of Content) for a README.md or
-a GitHub wiki page **without installing additional software**.
-
-It's my try to fix a problem:
-
-  * [github/issues/215](https://github.com/isaacs/github/issues/215)
-
-gh-md-toc is able to process:
-
-  * stdin
-  * local files (markdown files in local file system)
-  * remote files (html files on github.com)
-
-gh-md-toc tested on Ubuntu, and macOS High Sierra (gh-md-toc release 0.4.9). If you want it on Windows, you
-better to use a golang based implementation:
-
-  * [github-markdown-toc.go](https://github.com/ekalinin/github-markdown-toc.go)
-
-It's more solid, reliable and with ability of a parallel processing. And
-absolutely without dependencies.
-
-Table of contents
-=================
-
-<!--ts-->
-   * [Git Workflows](#Git Workflows)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
-      * [GitHub token](#github-token)
-      * [TOC generation with Github Actions](#toc-generation-with-github-actions)
-   * [Tests](#tests)
-   * [Dependency](#dependency)
-   * [Docker](#docker)
-     * [Local](#local)
-     * [Public](#public)
-<!--te-->
-
-Git Workflows
-============
+## Git Workflows
 
 ### Create a local branch and push that branch to the remote repository
 
