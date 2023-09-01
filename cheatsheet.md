@@ -137,7 +137,21 @@ Under section Configuration, there are there is an instruction how to configure 
         # step 3:  
         # git switch
 <hr>
-        
+
+<!-- TOC --><a name="keep-a-file-(folder)-locally-but-do-not-put-it-into-.gitignore"></a>
+### Keep a file (folder) locally but do not put it into .gitignore
+There are several strategies:
+
+https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git
+
+- Strategy 1: Keep the local file (or folder) but delete it for anyone else who pulls, i.e. do not publish it
+  
+      # git rm --cached <path_to_file/file_name>
+      [ #or git rm -r --cached <path_to_folder/folder_name>]
+   
+- Strategy 2:
+- Strategy 3: 
+
 
 ## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
 Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
