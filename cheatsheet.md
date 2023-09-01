@@ -145,6 +145,8 @@ There are several strategies:
 
 https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git
 
+https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=To%20ignore%20untracked%20files%2C%20you,tracking%20any%20(untracked)%20file.
+
 - Strategy 1: Keep the local file (or folder) but delete it for anyone else who pulls, i.e. do not publish it
   
       # git rm --cached <path_to_file/file_name>
