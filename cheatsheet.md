@@ -8,6 +8,7 @@
     + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
     + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
     + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
+    + [Keep a file (folder) locally but do not put it into .gitignore](#keep-a-file-(folder)-locally-but-do-not-put-it-into-.gitignore)
   * [Git Configuration](#git-configuration)
 
 <!-- TOC end -->
@@ -152,14 +153,7 @@ https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-chang
 - Strategy 2:
 - Strategy 3: 
 
-
-## <H3>Merge a remote branch into your local branch after both branches have diverged (mostly after a rebase of the local branch)
-Switch to your local branch and do a merge with no commit. Eventually, solve conflicts.
-
-        # git switch <loc_fea_bra>
-        # git merge --no-commit <remote_bra_of_loc_fea_bra>
-        # git mergetool (optional for solving conflicts)
-
+<hr>
 
 <!-- TOC --><a name="git-configuration"></a>
 ## Git Configuration 
