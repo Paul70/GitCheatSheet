@@ -9,6 +9,7 @@
     + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
     + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
     + [Keep a file (folder) locally but do not put it into .gitignore](#keep-a-file-(folder)-locally-but-do-not-put-it-into-.gitignore)
+    + [Init and Update all Submodules listed in your .gitmodules File](#Init-and-Update-all-Submodules-listed-in-your-.gitmodules-File")
   * [Git Configuration](#git-configuration)
 
 <!-- TOC end -->
@@ -156,6 +157,19 @@ https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=T
 - Strategy 3: 
 
 <hr>
+
+<!-- TOC --><a name="Init-and-Update-all-Submodules-listed-in-your-.gitmodules-File"></a>
+### Init and Update all Submodules listed in your .gitmodules File
+
+Updating a submodule for the first time (after one has added a submodule) requires an init step. In case, one has cloned a git project with "--recurse-submodules", this 
+init step is included and one can directly update the submodules:
+
+- Initially update all your project's submodules recursively, i.e. alos update all nested submodules (not necessary after "git clone --recurse-submodules")
+      # git submodule update --init --remote --recursive
+
+- Update all your (already initialized) submodules
+      # git submodule update --recursive
+
 
 <!-- TOC --><a name="git-configuration"></a>
 ## Git Configuration 
