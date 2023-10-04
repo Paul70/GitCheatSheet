@@ -165,10 +165,10 @@ Updating a submodule for the first time (after one has added a submodule) requir
 init step is included and one can directly update the submodules:
 
 - Initially update all your project's submodules recursively, i.e. alos update all nested submodules (not necessary after "git clone --recurse-submodules")
-      # git submodule update --init --remote --recursive
+       # git submodule update --init --remote --recursive
 
 - Update all your (already initialized) submodules
-      # git submodule update --recursive
+       # git submodule update --recursive
 
 
 <!-- TOC --><a name="git-configuration"></a>
