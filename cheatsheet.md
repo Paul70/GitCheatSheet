@@ -188,7 +188,18 @@ To set VS Code as your default git mergetool execute the following commands and 
         # git config --global merge.tool vscode
         # git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
-Hier muss ich noch festhalten wie ich das mit den drei Spalten bei vs code einstelle, wenn ich conflicts hab
+Now, in case of conflicts, you can just call VS Cosde to solve all conflicts
+
+        # git mergetool
+
+In the lower right corner click on "Mergetool" to get into the three column merge tool view. If you do not get the middle column "Base" at startup, click on the three dots in the most 
+upper right corner and select "Show Base"
+
+Now you have three columns and a bottom window:
+- the most left column shows you code which is coming from a remote commit you have recently fetched and which is conflicts with one of your commits. See also the commit hash and look it up with gitk
+  or another graph tool.
+- the middle column called "Base" shows the base or parent state without changes neiter from the remote incoming commit nor from your individula, local commits
+- the right column represents the content of your commits you did on your local machine and you want to merge/rebase/pull
 
 <hr>
 
