@@ -163,6 +163,7 @@ https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=T
 
 Updating a submodule for the first time (after one has added a submodule) requires an init step. In case, one has cloned a git project with "--recurse-submodules", this 
 init step is included and one can directly update the submodules:
+Das hier ist noch nicht vollständig, da muss noch so ein pull --recurese-submodules und so rein
 
 - Initially update all your project's submodules recursively, i.e. alos update all nested submodules (not necessary after "git clone --recurse-submodules")
 
@@ -171,6 +172,11 @@ init step is included and one can directly update the submodules:
 - Update all your (already initialized) submodules
   
       # git submodule update --recursive
+
+
+### How to Create a Stash Commit
+
+Git stash command offers the 
 
 
 <!-- TOC --><a name="git-configuration"></a>
