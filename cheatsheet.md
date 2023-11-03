@@ -20,6 +20,12 @@
 <!-- TOC --><a name="git-workflows"></a>
 ## Git Workflows
 
+### Meaning of HEAD, HEAD~, HEAS~X
+- HEAD is short for the current commit sha currently checked out.
+- HEAD~ or HEAD~1 refers to the commit right before the currently checked out one.
+- HEAD~~ or HEAD~2 refers to the the commit even one step eralier as HEAD~ or HEAD~1.
+- HEAD~X means the Xth commit before the currently checked out one. 
+ 
 <!-- TOC --><a name="create-a-local-branch-and-push-that-branch-to-the-remote-repository"></a>
 ### Create a local branch and push that branch to the remote repository
 
