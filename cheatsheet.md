@@ -1,16 +1,22 @@
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [Git Cheat Sheet](#git-cheat-sheet)
-  * [Git Workflows](#git-workflows)
-    + [Create a local branch and push that branch to the remote repository](#create-a-local-branch-and-push-that-branch-to-the-remote-repository)
-    + [Rebase a local branch onto origin/main and push origin/main to that new, rebased history](#rebase-a-local-branch-onto-originmain-and-push-originmain-to-that-new-rebased-history)
-    + [Deleting a remote feature tracking branch](#deleting-a-remote-feature-tracking-branch)
-    + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
-    + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
-    + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
-    + [Keep a file (folder) locally but do not put it into .gitignore](#keep-a-file-(folder)-locally-but-do-not-put-it-into-.gitignore)
-    + [Init and Update all Submodules listed in your .gitmodules File](#Init-and-Update-all-Submodules-listed-in-your-.gitmodules-File")
-  * [Git Configuration](#git-configuration)
+   * [Git Workflows ](#git-workflows)
+      + [Create a local branch and push that branch to the remote repository](#create-a-local-branch-and-push-that-branch-to-the-remote-repository)
+      + [Rebase a local branch onto origin/main and push origin/main to that new, rebased history](#rebase-a-local-branch-onto-originmain-and-push-originmain-to-that-new-rebased-history)
+      + [Deleting a remote feature tracking branch](#deleting-a-remote-feature-tracking-branch)
+      + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
+      + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
+      + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
+      + [Keep a file (folder) locally but do not put it into .gitignore](#keep-a-file-folder-locally-but-do-not-put-it-into-gitignore)
+      + [Add Init and Update one or all Submodules listed in your .gitmodules File](#add-init-and-update-one-or-all-submodules-listed-in-your-gitmodules-file)
+      + [How to Create a Stash Commit](#how-to-create-a-stash-commit)
+   * [Git Configuration ](#git-configuration)
+   * [<H3> 2.1 VS Code as Git merge tool](#21-vs-code-as-git-merge-tool)
+- [<H3> 2.2 Configure Git for Windows (CR LF) and Unix (LF) line endings](#22-configure-git-for-windows-cr-lf-and-unix-lf-line-endings)
+      + [Cached](#cached)
+   * [Git Knowledge](#git-knowledge)
+      + [Meaning of HEAD, HEAD~, HEAS~X](#meaning-of-head-head-heasx)
 
 <!-- TOC end -->
 
@@ -140,7 +146,7 @@ Under section Configuration, there are there is an instruction how to configure 
         # git switch
 <hr>
 
-<!-- TOC --><a name="keep-a-file-(folder)-locally-but-do-not-put-it-into-.gitignore"></a>
+<!-- TOC --><a name="keep-a-file-folder-locally-but-do-not-put-it-into-gitignore"></a>
 ### Keep a file (folder) locally but do not put it into .gitignore
 There are several strategies:
 
@@ -158,7 +164,7 @@ https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=T
 
 <hr>
 
-<!-- TOC --><a name="Init-and-Update-all-Submodules-listed-in-your-.gitmodules-File"></a>
+<!-- TOC --><a name="add-init-and-update-one-or-all-submodules-listed-in-your-gitmodules-file"></a>
 ### Add Init and Update one or all Submodules listed in your .gitmodules File
 
 Updating a submodule for the first time (after one has added a submodule) requires an init step. In case, one has cloned a git project with "--recurse-submodules", this 
@@ -174,6 +180,7 @@ Das hier ist noch nicht vollständig, da muss noch so ein pull --recurese-submod
       # git submodule update --recursive
 
 
+<!-- TOC --><a name="how-to-create-a-stash-commit"></a>
 ### How to Create a Stash Commit
 
 Git stash command offers the 
@@ -182,6 +189,7 @@ Git stash command offers the
 <!-- TOC --><a name="git-configuration"></a>
 ## Git Configuration 
 
+<!-- TOC --><a name="21-vs-code-as-git-merge-tool"></a>
 ## <H3> 2.1 VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
 
@@ -203,6 +211,7 @@ Now you have three columns and a bottom window:
 
 <hr>
 
+<!-- TOC --><a name="22-configure-git-for-windows-cr-lf-and-unix-lf-line-endings"></a>
 # <H3> 2.2 Configure Git for Windows (CR LF) and Unix (LF) line endings
 Windows uses two chracters to indicate line endings, CR -Carriage Return - (0x0D (hex), 13 (decimal)) and LF -Line Feed- (0x0A (hex), 10 (decimal)).
 Unix based systems only insert a single LF to mark line endings.
@@ -225,13 +234,16 @@ More information about this topic and why the world is as it is can be found und
   https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell
   
       
+<!-- TOC --><a name="cached"></a>
 ### Cached
 
       #git rm --cached -r .
       # git reset --hard
 
+<!-- TOC --><a name="git-knowledge"></a>
 ## Git Knowledge
 
+<!-- TOC --><a name="meaning-of-head-head-heasx"></a>
 ### Meaning of HEAD, HEAD~, HEAS~X
 - HEAD is short for the current commit sha currently checked out.
 - HEAD~ or HEAD~1 refers to the commit right before the currently checked out one.
