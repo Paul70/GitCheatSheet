@@ -18,13 +18,7 @@
 # Git Cheat Sheet
 
 <!-- TOC --><a name="git-workflows"></a>
-## Git Workflows
-
-### Meaning of HEAD, HEAD~, HEAS~X
-- HEAD is short for the current commit sha currently checked out.
-- HEAD~ or HEAD~1 refers to the commit right before the currently checked out one.
-- HEAD~~ or HEAD~2 refers to the the commit even one step eralier as HEAD~ or HEAD~1.
-- HEAD~X means the Xth commit before the currently checked out one. 
+## Git Workflows 
  
 <!-- TOC --><a name="create-a-local-branch-and-push-that-branch-to-the-remote-repository"></a>
 ### Create a local branch and push that branch to the remote repository
@@ -165,7 +159,7 @@ https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=T
 <hr>
 
 <!-- TOC --><a name="Init-and-Update-all-Submodules-listed-in-your-.gitmodules-File"></a>
-### Init and Update all Submodules listed in your .gitmodules File
+### Add Init and Update one or all Submodules listed in your .gitmodules File
 
 Updating a submodule for the first time (after one has added a submodule) requires an init step. In case, one has cloned a git project with "--recurse-submodules", this 
 init step is included and one can directly update the submodules:
@@ -235,6 +229,14 @@ More information about this topic and why the world is as it is can be found und
 
       #git rm --cached -r .
       # git reset --hard
+
+## Git Knowledge
+
+### Meaning of HEAD, HEAD~, HEAS~X
+- HEAD is short for the current commit sha currently checked out.
+- HEAD~ or HEAD~1 refers to the commit right before the currently checked out one.
+- HEAD~~ or HEAD~2 refers to the the commit even one step eralier as HEAD~ or HEAD~1.
+- HEAD~X means the Xth commit before the currently checked out one. 
 
 
         
