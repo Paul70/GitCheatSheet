@@ -8,15 +8,13 @@
       + [Get the newest updates from origin/main for your local feature branch by rebasing your local feature branch commits on top of orgin/main](#get-the-newest-updates-from-originmain-for-your-local-feature-branch-by-rebasing-your-local-feature-branch-commits-on-top-of-orginmain)
       + [How to solve merge conflicts happening during a rebase or merge](#how-to-solve-merge-conflicts-happening-during-a-rebase-or-merge)
       + [Create a local branch tracking an already existing remote branch](#create-a-local-branch-tracking-an-already-existing-remote-branch)
-      + [Keep a file (folder) locally but do not put it into .gitignore](#keep-a-file-folder-locally-but-do-not-put-it-into-gitignore)
-      + [Add Init and Update one or all Submodules listed in your .gitmodules File](#add-init-and-update-one-or-all-submodules-listed-in-your-gitmodules-file)
+      + [Add, Init and Update Submodules](#add-init-and-update-submodules)
       + [How to Create a Stash Commit](#how-to-create-a-stash-commit)
    * [Git Configuration ](#git-configuration)
-   * [<H3> 2.1 VS Code as Git merge tool](#21-vs-code-as-git-merge-tool)
-- [<H3> 2.2 Configure Git for Windows (CR LF) and Unix (LF) line endings](#22-configure-git-for-windows-cr-lf-and-unix-lf-line-endings)
+      + [VS Code as Git merge tool](#vs-code-as-git-merge-tool)
+      + [Configure Git for Windows (CR LF) and Unix (LF) line endings](#configure-git-for-windows-cr-lf-and-unix-lf-line-endings)
+      + [Git Command Completion for Windows PowerShell](#git-command-completion-for-windows-powershell)
       + [Cached](#cached)
-   * [Git Knowledge](#git-knowledge)
-      + [Meaning of HEAD, HEAD~, HEAS~X](#meaning-of-head-head-heasx)
 
 <!-- TOC end -->
 
@@ -146,51 +144,36 @@ Under section Configuration, there are there is an instruction how to configure 
         # git switch
 <hr>
 
-<!-- TOC --><a name="keep-a-file-folder-locally-but-do-not-put-it-into-gitignore"></a>
-### Keep a file (folder) locally but do not put it into .gitignore
-There are several strategies:
+<!-- TOC --><a name="add-init-and-update-submodules"></a>
+### Add, Init and Update Submodules
+-  Step 1: Add a git submodule via http address or ssh key
+-  Step 2: Update an existing submodule initially, do not forget the "recursive" option. Ohterwise, nested submodules in your submodule won't be updated. If there are no submodules, it does not hurt.
+-  Step 3: Ongoing submodule update process (after initializing a submodule, see step 2). Alternatively, one can also update all submodules via git pull command. 
 
-https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git
+        # step 1:
+        # git submodule add <http_or_ssh_of_submodule>
 
-https://luisdalmolin.dev/blog/ignoring-files-in-git-without-gitignore/#:~:text=To%20ignore%20untracked%20files%2C%20you,tracking%20any%20(untracked)%20file.
+        # step 2:
+        # git submodule update --init --remote --recursive
 
-- Strategy 1: Keep the local file (or folder) but delete it for anyone else who pulls, i.e. do not publish it
-  
-      # git rm --cached <path_to_file/file_name>
-      [ #or git rm -r --cached <path_to_folder/folder_name>]
-   
-- Strategy 2:
-- Strategy 3: 
-
-<hr>
-
-<!-- TOC --><a name="add-init-and-update-one-or-all-submodules-listed-in-your-gitmodules-file"></a>
-### Add Init and Update one or all Submodules listed in your .gitmodules File
-
-Updating a submodule for the first time (after one has added a submodule) requires an init step. In case, one has cloned a git project with "--recurse-submodules", this 
-init step is included and one can directly update the submodules:
-Das hier ist noch nicht vollständig, da muss noch so ein pull --recurese-submodules und so rein
-
-- Initially update all your project's submodules recursively, i.e. alos update all nested submodules (not necessary after "git clone --recurse-submodules")
-
-      # git submodule update --init --remote --recursive
-
-- Update all your (already initialized) submodules
-  
-      # git submodule update --recursive
+        # step 3: 
+        # git submodule update --recursive
+        # Alternative:
+        # git pull --recurse-submodules
 
 
 <!-- TOC --><a name="how-to-create-a-stash-commit"></a>
 ### How to Create a Stash Commit
 
 Git stash command offers the 
+<hr>
 
 
 <!-- TOC --><a name="git-configuration"></a>
 ## Git Configuration 
 
-<!-- TOC --><a name="21-vs-code-as-git-merge-tool"></a>
-## <H3> 2.1 VS Code as Git merge tool
+<!-- TOC --><a name="vs-code-as-git-merge-tool"></a>
+### VS Code as Git merge tool
 To set VS Code as your default git mergetool execute the following commands and you may have a look in your global git config file afterwards.
 
         # git config --global merge.tool vscode
@@ -211,8 +194,8 @@ Now you have three columns and a bottom window:
 
 <hr>
 
-<!-- TOC --><a name="22-configure-git-for-windows-cr-lf-and-unix-lf-line-endings"></a>
-# <H3> 2.2 Configure Git for Windows (CR LF) and Unix (LF) line endings
+<!-- TOC --><a name="configure-git-for-windows-cr-lf-and-unix-lf-line-endings"></a>
+### Configure Git for Windows (CR LF) and Unix (LF) line endings
 Windows uses two chracters to indicate line endings, CR -Carriage Return - (0x0D (hex), 13 (decimal)) and LF -Line Feed- (0x0A (hex), 10 (decimal)).
 Unix based systems only insert a single LF to mark line endings.
 However, you need to configure git to adapt the line ending markers if both systems (Windows and Unix) work together on one Git project. This is often the case since build
@@ -227,10 +210,9 @@ More information about this topic and why the world is as it is can be found und
 
   <hr>
 
-  <H3> Git Command Completion for Windows PowerShell</H3>
+<!-- TOC --><a name="git-command-completion-for-windows-powershell"></a>
+### Git Command Completion for Windows PowerShell
   There is a tool/plugin called Git polish or something simialr. How to install and make use of it is depicted here:
-   <br>
-
   https://git-scm.com/book/ms/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Powershell
   
       
@@ -240,15 +222,6 @@ More information about this topic and why the world is as it is can be found und
       #git rm --cached -r .
       # git reset --hard
 
-<!-- TOC --><a name="git-knowledge"></a>
-## Git Knowledge
-
-<!-- TOC --><a name="meaning-of-head-head-heasx"></a>
-### Meaning of HEAD, HEAD~, HEAS~X
-- HEAD is short for the current commit sha currently checked out.
-- HEAD~ or HEAD~1 refers to the commit right before the currently checked out one.
-- HEAD~~ or HEAD~2 refers to the the commit even one step eralier as HEAD~ or HEAD~1.
-- HEAD~X means the Xth commit before the currently checked out one. 
 
 
         
