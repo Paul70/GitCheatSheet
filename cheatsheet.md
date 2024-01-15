@@ -74,6 +74,17 @@
         # git push -f 
 <hr>
 
+### Squashing the last X Commits on a local Feature Branch
+
+This is simply done by interactively rebasing your local feature branch but not changing the base commit. In other words, you do not actually rebase your commit histroy but use the rebase tool
+to squash your commits.
+
+- Step 1: Start the interacitve rebase process.
+
+        # git rebase --interactive HEAD~X
+
+- Step 2: In your rebasing editor, select the commit you want to squash. Be aware that you need to "pick" at least one commit. Save and continue the rebasing process.
+
 <!-- TOC --><a name="deleting-a-remote-feature-tracking-branch"></a>
 ### Deleting a remote feature tracking branch
 
